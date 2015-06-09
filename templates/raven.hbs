@@ -7,7 +7,7 @@
   {{text}}
   <br>
   {{#each houseTag in houseTags}}
-    <span style="font-weight: bold;">{{houseTag.name}} </span>
+    {{#link-to 'house-tag' houseTag.id}}<span style="font-weight: bold;">{{houseTag.name}} </span>{{/link-to}}
   {{/each}}
 
   {{#if isReplying}}

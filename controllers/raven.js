@@ -23,9 +23,22 @@ App.RavenController = Ember.ObjectController.extend({
       if (text.length > 141) {
         this.set('messageError', true);
       } else {
-        var houseTags = this.get('replyHouseTags').split(', ');
+        var houseTagNames = this.get('replyHouseTags').split(', ');
         for (var i = 0; i < houseTags.length; i++) {
-          newRaven.houseTags.push(houseTags[i]);
+          var foundHouseTag = houseTags.findBy("name", houseTagNames[i]);
+          if (foundHouseTag){
+            newRaven.houseTags.addObject(foundHouseTag);
+            foundHouseTag.ravens.push(newRaven);
+          } else {
+            var newHouseTag = {
+              id: houseTags.length,
+              name: houseTagNames[i],
+              ravens: []
+            };
+            newRaven.houseTags.addObject(newHouseTag);
+            newHouseTag.ravens.push(newRaven);
+            houseTags.addObject(newHouseTag);
+          }
         }
         ravens.addObject(newRaven);
         this.get('replies').addObject(newRaven);
