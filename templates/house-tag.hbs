@@ -1,0 +1,10 @@
+<p>
+  {{name}}
+</p>
+
+
+<ul>
+{{#each ravens}}
+  {{#link-to 'raven' id}}<li> {{userName}} </li> {{/link-to}}
+{{/each}}
+</ul>

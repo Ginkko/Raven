@@ -7,7 +7,7 @@
         <li class="list-group-item">
           <p>{{text}}</p>
           {{#each houseTag in houseTags}}
-            <span style="font-weight: bold;">{{houseTag}} </span>
+            <span style="font-weight: bold;">{{#link-to "house-tag" houseTag.id}}{{houseTag.name}} {{/link-to}}</span>
           {{/each}}
         </li>
       </ul>
