@@ -13,7 +13,7 @@ var ravens = [
     id: '1',
     userName: '3dd4rd St4rk',
     text: 'Damnit Robert, Kings Landing smells.',
-    houseTags: ['#Stark', '#WinterIsComing'],
+    houseTags: [],
     replies: [],
     date: new Date('May 8, 2011 12:24:00'),
     dateString: 'Sun, 08 May 2011 19:24:00 GMT'
@@ -23,7 +23,7 @@ var ravens = [
     id: '2',
     userName: 'DA KING',
     text: 'STFU NED IM THE KING',
-    houseTags: ['#MOREWINE', '#MOREBROTHELS'],
+    houseTags: [],
     replies: [],
     date: new Date('May 8, 2011 12:25:00'),
     dateString: 'Sun, 08 May 2011 19:25:00 GMT'
