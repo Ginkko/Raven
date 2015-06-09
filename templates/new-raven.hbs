@@ -11,6 +11,11 @@
     {{input id="text" class="form-control" value=raven.text}}
   </div>
 
+  <div class="form-group">
+    <label for="houseTags">HouseTags:</label>
+    {{input id="houseTags" class="form-control" placeholder="Enter tags separated by commas ie: #Stark, #LannisterSucks" value=houseTagsHolder}}
+  </div>
+
   <button class="btn btn-success" {{action "saveRaven"}}>Fly!</button>
 </form>
 

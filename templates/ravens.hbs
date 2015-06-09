@@ -1,14 +1,16 @@
 <h1>Ravens</h1>
 
-<ul>
+<ul class="list-unstyled list-group">
   {{#each}}
-    <li>{{#link-to 'raven' id}}{{userName}} {{/link-to}}</li>
-      <ul>
-        <li>{{text}}</li>
-
-        {{#each houseTag in houseTags}}
-          <span style="font-weight: bold;">{{houseTag}} </span>
-        {{/each}}
+    <li class="list-group-item">{{#link-to 'raven' id}}{{userName}} {{/link-to}}
+      <ul class="list-unstyled list-group">
+        <li class="list-group-item">
+          <p>{{text}}</p>
+          {{#each houseTag in houseTags}}
+            <span style="font-weight: bold;">{{houseTag}} </span>
+          {{/each}}
+        </li>
       </ul>
+    </li>
   {{/each}}
 </ul>
