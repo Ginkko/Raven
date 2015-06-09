@@ -23,18 +23,18 @@ App.RavenController = Ember.ObjectController.extend({
       if (text.length > 141) {
         this.set('messageError', true);
       } else {
-        // var houseTags = this.houseTagsHolder.split(', ');
-        // for (var i = 0; i < houseTags.length; i++) {
-        //   newRaven.houseTags.push(houseTags[i]);
-        // }
+        var houseTags = this.get('replyHouseTags').split(', ');
+        for (var i = 0; i < houseTags.length; i++) {
+          newRaven.houseTags.push(houseTags[i]);
+        }
         ravens.addObject(newRaven);
         this.get('replies').addObject(newRaven);
 
-        // this.set('userName', '');
-        // this.set('text', '');
-        // this.set('houseTagsHolder', '');
+        this.set('replyUserName', '');
+        this.set('replyText', '');
+        this.set('replyHouseTags', '');
+        this.set('isReplying', false);
       }
-      this.set('isReplying', false);
     }
   }
 
