@@ -1,5 +1,7 @@
 App.RavensRoute = Ember.Route.extend({
+
+
   model: function() {
-    return ravens;
+    return ravens.reverse();
   }
 });

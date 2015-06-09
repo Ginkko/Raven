@@ -9,7 +9,16 @@ App.NewRavenController = Ember.Controller.extend({
 
   actions: {
     saveRaven: function() {
-      var newRaven = {id: ravens.length.toString(), userName: this.raven.userName, text: this.raven.text, houseTags: [], parentRaven: undefined};
+      var date = new Date();
+      var newRaven = {
+        id: ravens.length.toString(),
+        userName: this.raven.userName,
+        text: this.raven.text,
+        houseTags: [],
+        parentRaven: undefined,
+        date: date,
+        dateString: date.toUTCString()
+      };
       if (this.raven.text.length > 141) {
         this.set('messageError', true);
       } else {
@@ -22,7 +31,6 @@ App.NewRavenController = Ember.Controller.extend({
         this.set('raven.text', '');
         this.set('houseTagsHolder', '');
         this.transitionToRoute('ravens');
-
       }
     }
   }
