@@ -5,11 +5,10 @@
     <li>{{#link-to 'raven' id}}{{userName}} {{/link-to}}</li>
       <ul>
         <li>{{text}}</li>
-        <li>
-        {{#each houseTag in this.houseTags}}
+
+        {{#each houseTag in houseTags}}
           <span style="font-weight: bold;">{{houseTag}} </span>
         {{/each}}
-        </li>
       </ul>
   {{/each}}
 </ul>

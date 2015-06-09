@@ -1,6 +1,6 @@
 var ravens = [
   {
-    id: '1',
+    id: '0',
     userName: 'Hodor',
     text: 'Hodor, Hodor! Hodor hodor hodor!',
     houseTags: ['#Hodor'],
@@ -8,7 +8,7 @@ var ravens = [
   },
 
   {
-    id: '2',
+    id: '1',
     userName: '3dd4rd St4rk',
     text: 'Damnit Robert, Kings Landing smells.',
     houseTags: ['#Stark', '#NorthernersRULE', '#WinterIsComing'],
@@ -16,7 +16,7 @@ var ravens = [
   },
 
   {
-    id: '3',
+    id: '2',
     userName: 'DA KING',
     text: 'STFU NED IM THE KING',
     houseTags: ['#Baratheon', '#MOREWINE', '#MOREBROTHELS'],

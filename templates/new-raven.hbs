@@ -1,0 +1,19 @@
+<h1>Send a raven:</h1>
+
+<form>
+  <div class="form-group">
+    <label for="userName">User:</label>
+    {{input id="userName" class="form-control" value=raven.userName}}
+  </div>
+
+  <div class="form-group">
+    <label for="text">Message:</label>
+    {{input id="text" class="form-control" value=raven.text}}
+  </div>
+
+  <button class="btn btn-success" {{action "saveRaven"}}>Fly!</button>
+</form>
+
+{{#if messageError}}
+  <h3 class="text-danger">Your scroll is too heavy! Ravens can only carry up to 141 characters!</h3>
+{{/if}}
