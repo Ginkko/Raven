@@ -15,7 +15,7 @@ App.NewRavenController = Ember.Controller.extend({
         userName: this.raven.userName,
         text: this.raven.text,
         houseTags: [],
-        parentRaven: undefined,
+        replies: [],
         date: date,
         dateString: date.toUTCString()
       };

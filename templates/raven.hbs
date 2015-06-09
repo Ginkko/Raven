@@ -1,9 +1,49 @@
-{{dateString}}
-<br>
-{{userName}}
-<br>
-{{text}}
-<br>
-{{#each houseTag in houseTags}}
-  <span style="font-weight: bold;">{{houseTag}} </span>
-{{/each}}
+<div class='col-md-6'>
+
+  {{dateString}}
+  <br>
+  {{userName}}
+  <br>
+  {{text}}
+  <br>
+  {{#each houseTag in houseTags}}
+    <span style="font-weight: bold;">{{houseTag}} </span>
+  {{/each}}
+
+  {{#if isReplying}}
+    <form>
+      <div class="form-group">
+        <label for="userName">User:</label>
+        {{input id="userName" class="form-control" valueBinding="replyUserName"}}
+      </div>
+
+      <div class="form-group">
+        <label for="text">Message:</label>
+        {{input id="text" class="form-control" valueBinding="replyText"}}
+      </div>
+
+      <div class="form-group">
+        <label for="houseTags">HouseTags:</label>
+        {{input id="houseTags" class="form-control" placeholder="Enter tags separated by commas ie: #Stark, #LannisterSucks" valueBinding="replyHouseTags"}}
+      </div>
+
+      <button class="btn btn-warning" {{action "sendReplyRaven"}}>Send reply!</button>
+    </form>
+
+  {{else}}
+
+
+    <button class="btn btn-success" {{action "replyRaven"}}>Reply to raven</button>
+
+
+
+  {{/if}}
+</div>
+<div class="col-md-6">
+<h4>Replies</h4>
+  <ul>
+  {{#each replies}}
+    {{#link-to 'raven' id}}<li> {{userName}} </li> {{/link-to}}
+  {{/each}}
+  </ul>
+</div>
